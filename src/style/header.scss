@@ -1,0 +1,58 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 28px;
+    margin-top: 20px;
+}
+.searchBox{
+    width: 373px;
+    height: 39px;
+    border-radius: 8px;
+    background: #1D2032;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.inp{
+    border: none;
+    background: transparent;
+    color: #50556A;
+}
+.inp::placeholder{
+    color: #50556A;
+}
+.inp:focus{
+    outline: none;
+}
+
+.profileLink {
+    width: 220px;
+    height: 40px;   
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profileLink p {
+    color: var(--text-label, #55597D);
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.profileLink .name {
+    color: var(--text-normal, #ADB3CC);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 4px;
+}

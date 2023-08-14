@@ -1,0 +1,45 @@
+.input,
+.select {
+    width: 450px;
+    height: 55px;
+    border-radius: 30px;
+    background: #7D87B7;
+    padding: 0 31px;
+    border: none;
+}
+
+.select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.select:focus {
+    outline: none;
+}
+
+.input,
+.select,
+.select::placeholder,
+.input::placeholder, .btnSend {
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.3px;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.btnSend{
+    width: 450px;
+    height: 55px;
+    border-radius: 30px;
+    border: none;
+    background-color: #363D5F;
+    font-size: 24px;
+}

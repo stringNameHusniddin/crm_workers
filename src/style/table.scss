@@ -1,0 +1,163 @@
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    margin-left: 82px;
+}
+
+.pageName {
+    color: var(--text-normal, #ADB3CC);
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    margin-top: 44px;
+    margin-left: 28px;
+}
+
+.employes_header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 27px;
+    margin-top: 44px;
+}
+
+.employes_header h1 {
+    margin: 0 !important;
+}
+
+.employes_header a {
+    width: 167px;
+    height: 48px;
+    border-radius: 30px;
+    background: #3B4772;
+    border: none;
+    color: #AEAEAE;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.head {
+    display: flex;
+    height: 51px;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.head_column {
+    background: #1D2134;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    color: var(--text-normal, #ADB3CC);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.48px;
+}
+
+.tableItem {
+    display: flex;
+    height: 51px;
+    width: 100%;
+    position: relative;
+}
+
+.item_column {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    color: var(--text-normal, #ADB3CC);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.18px;
+}
+
+.tableItem div {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.18px;
+}
+
+.tableItem div p {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.done {
+    background: rgba(0, 222, 115, 0.10);
+    color: #00DE73;
+}
+
+.pending {
+    background: rgba(255, 56, 56, 0.10);
+    color: #FF3838;
+}
+
+.free {
+    color: #DE6B00;
+    background: rgba(255, 153, 0, 0.10);
+}
+
+.opacity {
+    opacity: 0.4;
+}
+
+.tab, .changeData, .logOut{
+    border-radius: 6px;
+    border: 1px solid var(--text-normal, #ADB3CC);
+    padding: 8px 12px;
+    color: var(--text-normal, #ADB3CC);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    background: transparent;
+    cursor: pointer;
+}
+.changeData{
+    margin-top: 20px;
+    margin-left: 28px;
+}
+
+.status_modal{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    background-color: #1D2134;
+    padding: 10px;
+    z-index: 999;
+    align-items: flex-start;
+    right: 37px;
+    top: 42px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:7px;
+    border-bottom-left-radius:5px;
+}
+.status_modal p{
+    cursor: pointer;
+}

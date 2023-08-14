@@ -1,0 +1,100 @@
+.n_layout {
+    display: flex;
+    width: 100%;
+    gap: 120px;
+}
+
+.n_head,
+.n_item {
+    display: flex;
+    width: 373px;
+    height: 51px;
+}
+
+.n_table {
+    width: 373px;
+    margin-left: 28px;
+    margin-top: 126px;
+}
+
+.n_items {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 600px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #2f3346;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ADB3CC;
+}
+
+.n_message {
+    width: 750px;
+    min-height: 128px;
+    border-radius: 30px;
+    background: #323751;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 35px;
+    gap: 32px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
+
+.n_messages {
+    height: 600px;
+    margin-top: 126px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.messageInp {
+    display: flex;
+    flex-direction: column;
+}
+
+.messageInp input{
+    width: 680px;
+    height: 47px;
+    border-radius: 30px;
+    background: #FFF;
+    padding-left: 29px;
+    border: none;
+}
+input:focus{
+    outline: none;
+}
+.message_inp{
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+}
+.message_inp button{
+    border: none;
+    background-color: transparent;
+}
+
+.notes_layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

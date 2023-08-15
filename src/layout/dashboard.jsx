@@ -89,7 +89,7 @@ export default function Dashboard({ workers, currentUser, setUsers }) {
                 <Suspense fallback={"loding..."}>
                     {
                         data.map((mal, i) => (
-                            <Item setWorks={setWorks} works={works} key={i += 1} data={mal} i={i += 1} setUsers={setUsers}/>
+                            <Item user={currentUser} setWorks={setWorks} works={works} key={i += 1} data={mal} i={i += 1} setUsers={setUsers}/>
                         ))
                     }
                 </Suspense>

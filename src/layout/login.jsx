@@ -14,13 +14,13 @@ export default function Login({ setUsername, setPassword, userName, password }) 
         };
 
         const res = await fetch("http://localhost:8000/login/", requestOptions)
-        if (!res.ok) {
-            throw new Error("Failed")
-        }
         const data = await res.json()
-        localStorage.setItem("token", JSON.stringify(data))
-        // location.reload()
-        window.location.reload(false);
+        if (!res.ok) {
+            alert(data.detail)
+        }else{
+            localStorage.setItem("token", JSON.stringify(data))
+            window.location.reload(false);
+        }
     }
 
     return <div className="login">

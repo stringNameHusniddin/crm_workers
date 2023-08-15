@@ -17,6 +17,7 @@ import addWorksIcon from "./assets/icon/addWork.svg"
 import Note from './layout/note'
 import AddWorks from './layout/addWorks'
 import AddWorkers from './layout/addWorkers'
+import Notification from './layout/notification'
 
 export const nav_data = [
   {
@@ -30,7 +31,7 @@ export const nav_data = [
       {
         name: "Notifications",
         icon: notificationsIcon,
-        to: "/notification"
+        to: "/notifications"
       },
       {
         name: "Employes",
@@ -115,6 +116,7 @@ function App() {
             <Route path='/workers' element={<Worker workers={users} currentUser={currentUser} permission={permission}/>} />
             <Route path='/add works' element={<AddWorks users={users} user={currentUser} setUsers={setUsers} permission={permission}/>}/>
             <Route path='/add workers' element={<AddWorkers users={users} user={currentUser} setUsers={setUsers} permission={permission}/>}/>
+            <Route path='/notifications' element={<Notification users={users} user={currentUser} setUsers={setUsers}/>}/>
           </> : <Route path='/' element={<Login
             userName={userName}
             password={password}

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Item({ data, i, setWorks, works }) {
+export default function Item({ data, i, setWorks, works, user }) {
 
     const [modalStyle, setModalStyle] = useState({
         display: "none"
@@ -10,20 +10,22 @@ export default function Item({ data, i, setWorks, works }) {
 
     function changeStatus(status, e) {
         e.stopPropagation();
-        const new_works = works.map(work => {
-            if (work.id === data.id) {
-                return {
-                    ...work,
-                    status
+        if (user.username === data.to.username) {
+            const new_works = works.map(work => {
+                if (work.id === data.id) {
+                    return {
+                        ...work,
+                        status
+                    }
                 }
-            }
-            return work
-        })
-        setModalStyle({
-            display: "none"
-        })
-        send_data(status, data.id)
-        setWorks(new_works)
+                return work
+            })
+            setModalStyle({
+                display: "none"
+            })
+            send_data(status, data.id)
+            setWorks(new_works)
+        }
     }
     function send_data(status, id) {
 
@@ -55,7 +57,11 @@ export default function Item({ data, i, setWorks, works }) {
             <p style={{ width: '20%' }} className="item_column opacity">{data.name}</p>
             <p style={{ width: '20%' }} className="item_column opacity">{data.join_data.slice(0, 10)}</p>
             <p style={{ width: '20%' }} className="item_column opacity">{data.complete_data.slice(0, 10)}</p>
-            <div style={{ width: '10%' }} className="item_column" onClick={() => setModalStyle({ display: "flex" })}>
+            <div style={{ width: '10%' }} className="item_column" onClick={() => {
+                if (user.username === data.to.username) {
+                    setModalStyle({ display: "flex" })
+                }
+            }}>
                 <p className={data.status}>{data.status}</p>
             </div>
             <div className="status_modal" style={modalStyle}>

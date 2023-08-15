@@ -1,11 +1,4 @@
-import { users } from "../../assets/constants/users"
-
-export default function Table({setId}){
-
-    const setToLocalStorage=(id)=>{
-        localStorage.setItem("n_id", id)
-        setId(id)
-    }
+export default function Table({setId, users}){
 
     return(
         <div>
@@ -15,7 +8,10 @@ export default function Table({setId}){
             </div>
             <div className="n_items">
                 {users.map((item, i)=>(
-                    <div style={{cursor:"pointer"}} key={i+=1} onClick={()=>setToLocalStorage(item.id)} className="n_item">
+                    <div style={{cursor:"pointer"}} key={i+=1} onClick={()=>{
+                        localStorage.setItem("user_id", item.id)
+                        setId(item.id)
+                    }} className="n_item">
                         <p style={{width:"10%"}} className="item_column">{i+=1}</p>
                         <p style={{width:"90%"}} className="item_column">{item.username}</p>
                     </div>

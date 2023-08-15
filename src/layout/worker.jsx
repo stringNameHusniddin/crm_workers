@@ -69,7 +69,7 @@ export default function Worker({ workers, currentUser }) {
                 <div style={{ height: 510 }}>
                     {
                         data.map((mal, i) => (
-                            <Item setWorkers={setWorkers_} workers={workers_} key={i += 1} data={mal} i={i += 1} />
+                            <Item user={currentUser} setWorkers={setWorkers_} workers={workers_} key={i += 1} data={mal} i={i += 1} />
                         ))
                     }
                 </div>

@@ -81,8 +81,6 @@ export default function AddWorks({ users, user, setUsers, permission }) {
         }
     }
 
-    console.log(to);
-
     return <>{
         permission ? <div>
             <h1 className="pageName">Add Works</h1>

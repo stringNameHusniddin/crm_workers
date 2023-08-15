@@ -1,20 +1,46 @@
 import { useState } from "react"
 import icon from "../../assets/icon/send.png"
 
-export default function Inp({ setData, data,  id }) {
+export default function Inp({ setUsers, user, id }) {
     const [message, setMessage] = useState("")
+    const token = localStorage.getItem("token")
 
-    const addMessageToData = ()=>{
-        setData([...data, {
-            to:id,
-            message
-        }])
+    function send_data() {
+        if (message !== "") {
+            const options = {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${JSON.parse(token).access_token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    text: message,
+                    owner_id: user.id,
+                    to_id: id
+                })
+            }
+
+            fetch("http://127.0.0.1:8000/notifications", options).then(
+                res => res.json()
+            ).then(
+                () => {
+                    fetch("http://127.0.0.1:8000/user", {
+                        headers: {
+                            "Authorization": `Bearer ${JSON.parse(token).access_token}`,
+                            "Content-Type": "application/json",
+                        }
+                    }).then(res => res.json()).then(json => {
+                        setUsers(json)
+                    })
+                }
+            )
+        }
     }
 
     return (
         <div className="message_inp">
-            <input type="text" placeholder="Notifications" onChange={e=>setMessage(e.target.value)}/>
-            <button onClick={addMessageToData}><img src={icon} alt="" /></button>
+            <input type="text" placeholder="Notifications" onChange={e => setMessage(e.target.value)} />
+            <button onClick={send_data}><img src={icon} alt="" /></button>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import icon from "../../assets/icon/qungiroq.svg"
 
-export default function Item({message}){
+export default function Item({text}){
     return(
         <div className="n_message">
             <img src={icon} alt="" />
-            <p>{message}</p>
+            <p>{text}</p>
         </div>
     )
 }

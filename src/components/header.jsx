@@ -20,8 +20,8 @@ export default function Header({ user }) {
                 </div>
                 <button className="logOut" onClick={()=>{
                     localStorage.removeItem("token")
-                    window.location.reload(false)
                     navigate("/")
+                    window.location.reload(false)
                 }} style={{marginLeft:"20px"}}>Log out</button>
             </div>
         </div>

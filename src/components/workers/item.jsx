@@ -1,29 +1,31 @@
 import { useState } from "react";
 
-export default function Item({ data, i, workers, setWorkers }) {
+export default function Item({ data, i, workers, setWorkers, user }) {
 
     const [modalStyle, setModalStyle] = useState({
-        display: "none"
+        display: "none",
     })
 
     const token = localStorage.getItem("token")
 
     function changeStatus(status, e) {
         e.stopPropagation();
-        const new_workers = workers.map(worker => {
-            if (worker.id === data.id) {
-                return {
-                    ...worker,
-                    status
+        if (user.role === "director" || user.role === "pre_director") {
+            const new_workers = workers.map(worker => {
+                if (worker.id === data.id) {
+                    return {
+                        ...worker,
+                        status
+                    }
                 }
-            }
-            return worker
-        })
-        setModalStyle({
-            display: "none"
-        })
-        send_data(status, data.id)
-        setWorkers(new_workers)
+                return worker
+            })
+            setModalStyle({
+                display: "none"
+            })
+            send_data(status, data.id)
+            setWorkers(new_workers)
+        }
     }
     function send_data(status, id) {
 
@@ -44,7 +46,7 @@ export default function Item({ data, i, workers, setWorkers }) {
                 age: data.age,
                 email: data.email,
                 boss_id: data.boss_id,
-                id:data.id
+                id: data.id
             })
         }
 
@@ -58,7 +60,11 @@ export default function Item({ data, i, workers, setWorkers }) {
             <p style={{ width: '20%' }} className="item_column">{data.username}</p>
             <p style={{ width: '10%' }} className="item_column">{data.age}</p>
             <p style={{ width: '20%' }} className="item_column opacity">{data.join_data.slice(0, 10)}</p>
-            <div style={{ width: '10%' }} className="item_column" onClick={() => setModalStyle({ display: "flex" })}>
+            <div style={{ width: '10%' }} className="item_column" onClick={() => {
+                if(user.role === "director" || user.role === "pre_director"){
+                    setModalStyle({ display: "flex", right: 525 })
+                }
+            }}>
                 <p className={data.status}>{data.status}</p>
             </div>
             <p style={{ width: '30%' }} className="item_column">{data.email}</p>

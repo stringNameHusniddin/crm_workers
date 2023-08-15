@@ -11,9 +11,6 @@ export default function Note({notes, user, setNotes}) {
         setData(notes.filter(item => item.owner.id === user.id))
     }, [user, notes])
 
-    //.filter(item => item.owner.id === user.id)
-    console.log(data, notes);
-
     return <div className="n_layout notes_layout">
         <div className="messageInp">
             <div className="n_messages" style={{height:650, marginBottom:40}}>

@@ -19,7 +19,7 @@ export default function Inp({ setData, data, id }) {
             })
         }
 
-        fetch("http://127.0.0.1:8000/notes", options).then(
+        fetch("https://crm-5l3k.onrender.com/notes", options).then(
             res => res.json()
         ).then(
             json => setData([...data, json])

@@ -13,7 +13,7 @@ export default function Login({ setUsername, setPassword, userName, password }) 
             ),
         };
 
-        const res = await fetch("http://localhost:8000/login/", requestOptions)
+        const res = await fetch("https://crm-5l3k.onrender.com/login/", requestOptions)
         const data = await res.json()
         if (!res.ok) {
             alert(data.detail)

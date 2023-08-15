@@ -20,11 +20,11 @@ export default function Inp({ setUsers, user, id }) {
                 })
             }
 
-            fetch("http://127.0.0.1:8000/notifications", options).then(
+            fetch("https://crm-5l3k.onrender.com/notifications", options).then(
                 res => res.json()
             ).then(
                 () => {
-                    fetch("http://127.0.0.1:8000/user", {
+                    fetch("https://crm-5l3k.onrender.com/user", {
                         headers: {
                             "Authorization": `Bearer ${JSON.parse(token).access_token}`,
                             "Content-Type": "application/json",

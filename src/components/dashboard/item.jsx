@@ -46,7 +46,7 @@ export default function Item({ data, i, setWorks, works, user }) {
             })
         }
 
-        fetch(`http://127.0.0.1:8000/work/${id}`, options)
+        fetch(`https://crm-5l3k.onrender.com/work/${id}`, options)
     }
 
 

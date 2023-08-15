@@ -63,11 +63,11 @@ export default function AddWorks({ users, user, setUsers, permission }) {
                 })
             }
 
-            fetch("http://127.0.0.1:8000/work", options).then(
+            fetch("https://crm-5l3k.onrender.com/work", options).then(
                 res => res.json()
             ).then(
                 () => {
-                    fetch("http://127.0.0.1:8000/user", {
+                    fetch("https://crm-5l3k.onrender.com/user", {
                         headers: {
                             "Authorization": `Bearer ${JSON.parse(token).access_token}`,
                             "Content-Type": "application/json",

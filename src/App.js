@@ -74,21 +74,21 @@ function App() {
   useEffect(() => {
     token ? setLogged(true) : setLogged(false)
     if (token) {
-      axios.get("http://127.0.0.1:8000/user", {
+      axios.get("https://crm-5l3k.onrender.com/user", {
         headers: {
           "Authorization": `Bearer ${JSON.parse(token).access_token}`
         }
       }).then((res) => {
         setUsers(res.data)
       })
-      axios.get(`http://127.0.0.1:8000/user/${jwtDecode(JSON.parse(token).access_token).sub}`, {
+      axios.get(`https://crm-5l3k.onrender.com/user/${jwtDecode(JSON.parse(token).access_token).sub}`, {
         headers: {
           "Authorization": `Bearer ${JSON.parse(token).access_token}`
         }
       }).then((res) => {
         setCurrentUser(res.data)
       })
-      axios.get("http://127.0.0.1:8000/notes", {
+      axios.get("https://crm-5l3k.onrender.com/notes", {
         headers: {
           "Authorization": `Bearer ${JSON.parse(token).access_token}`
         }

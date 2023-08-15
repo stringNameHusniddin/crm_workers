@@ -15,7 +15,7 @@ export default function Note({notes, user, setNotes}) {
         <div className="messageInp">
             <div className="n_messages" style={{height:650, marginBottom:40}}>
                 {data.length > 0 ? data.map((item, i) => (
-                    <Item  key={i += 1} message={item.text} />
+                    <Item messages={notes} id={item.id} setData={setNotes}  key={i += 1} message={item.text} />
                 )) : <h1 className="pageName" style={{ margin: 0 }}>There is nothing</h1>}
             </div>
             <Inp data={notes} setData={setNotes} id={user.id}/>
